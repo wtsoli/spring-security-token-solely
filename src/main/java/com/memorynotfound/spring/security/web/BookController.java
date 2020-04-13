@@ -12,13 +12,13 @@ public class BookController {
     @GetMapping("anonymous")
     @Secured("ROLE_ANONYMOUS")
     public String anonymously() {
-        return "Hello, World!";
+        return "Hello, World! this is anonymous";
     }
 
     @GetMapping("has-role")
     @Secured("ROLE_ADMIN")
     public String hasRole() {
-        return "Hello, World!";
+        return "Hello, World! this needs admin";
     }
 
 }

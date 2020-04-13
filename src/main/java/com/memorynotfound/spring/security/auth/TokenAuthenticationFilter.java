@@ -40,6 +40,15 @@ public class TokenAuthenticationFilter extends GenericFilterBean {
 				String getAuthority() {return "ROLE_ADMIN"; }
 			};
 			authorities.add(auth1);
+
+			GrantedAuthority auth2 = new GrantedAuthority() {
+				private static final long serialVersionUID = -850909471146017456L;
+
+				@Override
+				public
+				String getAuthority() {return "STRING_READ"; }
+			};
+			authorities.add(auth2);
 			
 			final User user = new User("username", "password", true, true, true, true, authorities); // TODO: get authorities
 			final UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(user,
